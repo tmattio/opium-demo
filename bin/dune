@@ -1,0 +1,7 @@
+(executable
+ (name server)
+ (public_name opium-demo)
+ (libraries opium logs logs.fmt opium-demo.web)
+ (modules server)
+ (flags
+  (:standard -open StdLabels)))

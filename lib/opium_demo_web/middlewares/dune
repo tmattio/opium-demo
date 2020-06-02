@@ -1,0 +1,4 @@
+(library
+ (name middlewares)
+ (public_name opium-demo.web.middlewares)
+ (libraries opium_kernel opium-demo))

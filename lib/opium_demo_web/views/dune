@@ -1,0 +1,4 @@
+(library
+ (name views)
+ (public_name opium-demo.web.views)
+ (libraries tyxml opium-demo))

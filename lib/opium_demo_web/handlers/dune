@@ -1,0 +1,4 @@
+(library
+ (name handlers)
+ (public_name opium-demo.web.handlers)
+ (libraries opium_kernel opium-demo.web.views opium-demo))

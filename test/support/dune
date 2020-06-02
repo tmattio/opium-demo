@@ -1,0 +1,7 @@
+(library
+ (name test_support)
+ (libraries alcotest opium-demo opium-demo.web opium-demo.frontend)
+ (flags
+  (:standard -linkall -g -open StdLabels)))
+
+(include_subdirs unqualified)

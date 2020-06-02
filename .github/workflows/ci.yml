@@ -1,0 +1,36 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build and test
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        ocaml-version: ['4.10.0']
+    steps:
+      - uses: avsm/setup-ocaml@master
+        with:
+          ocaml-version: ${{ matrix.ocaml-version }}
+
+      - uses: actions/checkout@v2
+
+      - name: Pin package
+        run: opam pin add opium-demo.dev -n .
+
+      - name: Query and install external dependencies
+        run: opam depext -yt opium-demo
+
+      - name: Install dependencies
+        run: make dev
+
+      - name: Build
+        run: make build
+
+      - name: Check formatting
+        run: make format
+
+      - name: Run tests
+        run: make test

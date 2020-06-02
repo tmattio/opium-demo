@@ -1,0 +1,6 @@
+(tests
+ (names user_auth_test user_confirmation_test user_registration_test
+   user_reset_password_test user_session_test user_settings_test)
+ (libraries test_support alcotest alcotest-lwt opium-demo.web)
+ (action
+  (run %{test} -q --color=always)))

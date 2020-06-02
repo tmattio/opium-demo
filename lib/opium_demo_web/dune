@@ -1,0 +1,13 @@
+(library
+ (name opium_demo_web)
+ (public_name opium-demo.web)
+ (libraries opium_kernel opium-demo.web.handlers opium-demo.web.middlewares
+   opium-demo.web.views opium-demo))
+
+(rule
+ (targets asset.ml)
+ (deps
+  (:data
+   (source_tree ../../asset)))
+ (action
+  (run %{bin:ocaml-crunch} -m plain ../../asset -o %{targets})))

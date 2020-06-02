@@ -1,0 +1,8 @@
+(library
+ (name opium_demo)
+ (public_name opium-demo)
+ (libraries lwt caqti caqti-driver-postgresql caqti-lwt ppx_rapper.runtime)
+ (preprocess
+  (pps ppx_rapper)))
+
+(include_subdirs unqualified)
